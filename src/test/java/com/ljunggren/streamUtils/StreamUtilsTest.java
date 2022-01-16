@@ -12,24 +12,31 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 public class StreamUtilsTest {
+    
+    private final List<String> states = Arrays.asList(new String[] {
+            "Alabama",
+            "Alaska",
+            "Arizona",
+            "Arkansas",
+            "California",
+            "Colorado",
+            "Connecticut",
+            "Delaware",
+            "Florida",
+            "Georgia"
+    });
 
     @Test
     public void getSliceTest() {
-        List<String> states = Arrays.asList(new String[] {
-                "Alabama",
-                "Alaska",
-                "Arizona",
-                "Arkansas",
-                "California",
-                "Colorado",
-                "Connecticut",
-                "Delaware",
-                "Florida",
-                "Georgia"
-        });
         List<String> sublist = StreamUtils.getSlice(states, 2, 6);
         assertEquals(states.get(2), sublist.get(0));
         assertEquals(states.get(6), sublist.get(4));
+    }
+    
+    @Test
+    public void getSliceOutOfBoundsTest() {
+        List<String> sublist = StreamUtils.getSlice(states, 7, 20);
+        assertEquals(sublist.size(), 3);
     }
     
     @Test
