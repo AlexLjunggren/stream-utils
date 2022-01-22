@@ -1,4 +1,4 @@
-package com.ljunggren.streamUtils;
+package io.ljunggren.streamUtils;
 
 import static org.junit.Assert.assertEquals;
 
