@@ -1,4 +1,4 @@
-package io.ljunggren.streamUtils;
+package io.ljunggren.stream.utils;
 
 import java.util.List;
 import java.util.Map;
